@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>정보올림피아드 문제 풀이</title>
+</head>
+<body>
+	<h3>501: 출력 - 자가진단1</h3><br/>
+	<h5>아래 "출력 예"와 같이 출력되는 프로그램을 작성하시오.</h5>
+	<h6>출력 예 : </h6><p/>
+	<h6>Fun Programming!</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!-- 문제 풀기 -->
+
+	<button onclick="solve1();">출력</button> 
+	<p id="result501"> </p>
+
+	<script>
+		// javaScript 작성 
+	 	function solve1(){
+	 		var text = "Fun Programming!"
+	 		document.getElementById('result501').innerHTML = text;
+	 	}
+
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+
+	<h3>533: 선택제어문 - 자가진단6</h3><br/>
+	<h5>남자는 'M' 여자는 'F'로 나타내기로 하고 18세 이상을 성인이라고 하자. 성별('M', 'F')과 나이를 입력받아 "MAN"(성인남자), "WOMAN"(성인여자), 
+	"BOY"(미성년남자), "GIRL"(미성년여자)을 구분하여 출력하는 프로그램을 작성하시오.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>F 15</h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>GIRL</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	<!-- 입력 -->
+	성별 : <input type="text" id="gender"/>
+	나이 : <input type="text" id="age"/>
+
+	<button onclick="solve2();">출력</button> 
+	<p id="result533"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve2(){
+	 		var gender = document.getElementById('gender').value;
+	 		var age = document.getElementById('age').value;
+
+	 		console.log("gender :" + gender);
+	 		console.log("age :" + age); 
+
+	 		//18세 이상은 성인으로 구분하기 때문에
+	 		//성인 구분 기준을 적는다
+	 		var adultAge = 18;
+
+
+	 		//출력 데이터
+	 		var man = "man";
+	 		var woman = "woman";
+	 		var boy = "boy";
+	 		var girl = "girl";
+
+	 		//18세 이상인 경우
+	 		if(age>=18) {
+	 			//남자인경우
+	 			if(gender == "M") {
+	 				document.getElementById('result533').innerHTML = man;
+	 			}
+	 			//여자인경우
+	 			else if(gender == "F") {
+	 				document.getElementById('result533').innerHTML = woman;
+	 			}
+	 		}
+	 		//18세 이상인 경우
+	 		else if(age<18) {
+	 			//남자인경우
+	 			if(gender == "M") {
+	 				document.getElementById('result533').innerHTML = boy;
+	 			}
+	 			//여자인경우
+	 			else if(gender == "F") {
+	 				document.getElementById('result533').innerHTML = girl;
+	 			}
+	 		}
+
+	 		
+	 	}
+
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>528: 선택제어문 - 자가진단1</h3><br/>
+	<h5>정수를 입력받아 첫 줄에 입력 받은 숫자를 출력하고 둘째 줄에 음수이면 “minus” 라고 출력하는 프로그램을 작성하시오.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>-5</h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>-5<p/>minus</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	<!-- 입력 -->
+	숫자 : <input type="text" id="number"/>
+
+	<button onclick="solve3();">출력</button> 
+	<p id="result528"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve3(){
+	 		var number = document.getElementById('number').value;
+
+	 		console.log("number :" + number);
+
+	 		//출력 데이터
+	 		var minus = "minus";
+
+	 		
+	 		var adultAge = 18;
+
+	 		if(number>=0) {
+	 			document.getElementById('result528').innerHTML = number;
+	 		}
+	 		else if(number<0) {
+	 			document.getElementById('result528').innerHTML = number+"<br/>"+minus;
+	 		}
+
+		
+	 	}
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>529: 선택제어문 - 자가진단2</h3><br/>
+	<h5>“몸무게+100-키”를 비만수치 공식이라고 하자. 키와 몸무게를 자연수로 입력받아 첫 번째 줄에 비만수치를 출력하고, 비만수치가 0보다 크면 
+	다음줄에 비만("Obesity")이라는 메시지를 출력하는 프로그램을 작성하시오. (출력형식은 아래 출력 예를 참고하세요.)</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>155 60</h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>5<p/>Obesity</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	<!-- 입력 -->
+	몸무게 : <input type="text" id="weight"/>
+	키 : <input type="text" id="height"/>
+
+	<button onclick="solve4();">출력</button> 
+	<p id="result529"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve4(){
+	 		var weight = document.getElementById('weight').value;
+	 		var height = document.getElementById('height').value;
+
+	 		var obesityLevels = 0;
+
+	 		obesityLevels=parseInt(weight)+100-parseInt(height);
+
+
+
+	 		console.log("weight :" + weight);
+	 		console.log("height :" + height);
+	 		console.log("obesityLevels :" + obesityLevels);
+
+	 		//출력 데이터
+	 		var obesity = "obesity";
+
+
+	 		if(obesityLevels<=0) {
+	 			document.getElementById('result529').innerHTML = obesityLevels;
+	 		}
+	 		else if(obesityLevels>0) {
+	 			document.getElementById('result529').innerHTML = obesityLevels+"<br/>"+obesity;
+	 		}
+
+		
+	 	}
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>109: 입력 - 형성평가4</h3><br/>
+	<h5>세 개의 정수를 입력받아 합과 평균을 출력하는 프로그램을 작성하시오.(단 평균은 소수 이하를 버림하여 정수 부분만 출력한다.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>20 50 100</h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>sum = 170<p/>avg = 56</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	<!-- 입력 -->
+	숫자1 : <input type="text" id="num1"/>
+	숫자2 : <input type="text" id="num2"/>
+	숫자3 : <input type="text" id="num3"/>
+
+	
+
+	<button onclick="solve5();">출력</button> 
+	<p id="result109"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve5(){
+	 		var num1 = document.getElementById('num1').value;
+	 		var num2 = document.getElementById('num2').value;
+	 		var num3 = document.getElementById('num3').value;
+
+	 		var sum = 0;
+	 		var arg = 0;
+
+	 		sum=parseInt(num1)+parseInt(num2)+parseInt(num3);
+	 		arg=(parseInt(num1)+parseInt(num2)+parseInt(num3))/3;
+
+
+	 		console.log("num1 :" + num1);
+	 		console.log("num2 :" + num2);
+	 		console.log("num3 :" + num3);
+	 		console.log("sum :" + sum);
+	 		console.log("arg :" + arg);
+
+            if(!isNumber(num1) || !isNumber(num2) || !isNumber(num3)) {
+            	alert("error");		
+            } else {
+            	document.getElementById('result109').innerHTML = "sum = "+sum+"<br/>"+"arg = "+arg;
+            } 		
+	 	}
+
+
+	 	function isNumber(s) {
+                s += ''; // 문자열로 변환
+                s = s.replace(/^\s*|\s*$/g, ''); // 좌우 공백 제거
+             if (s == '' || isNaN(s)) return false;
+                 return true;
+            }
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>124: 선택제어문 - 형성평가5</h3><br/>
+	<h5>1~12사이의 정수를 입력받아 평년의 경우 입력받은 월을 입력받아 평년의 경우 해당 월의 날수를 출력하는 프로그램을 작성하시오.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>2</h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>28</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	<!-- 입력 -->
+	달 : <input type="text" id="month"/>
+	
+	<button onclick="solve6();">출력</button> 
+	<p id="result124"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve6(){
+	 		var month = document.getElementById('month').value;
+            
+	 		console.log("month :" + month);
+
+
+
+	 		if (month == 1) {
+	 			document.getElementById('result124').innerHTML = 31+"<br/>"+"겨울"; 
+	 		} else if (month == 2) {
+	 			document.getElementById('result124').innerHTML = 28+"<br/>"+"겨울"; 
+	 		} else if (month == 3) {
+	 			document.getElementById('result124').innerHTML = 31+"<br/>"+"봄"; 
+	 		} else if (month == 4) {
+	 			document.getElementById('result124').innerHTML = 30+"<br/>"+"봄"; 
+	 		} else if (month == 5) {
+	 			document.getElementById('result124').innerHTML = 31+"<br/>"+"봄"; 
+	 		} else if (month == 6) {
+	 			document.getElementById('result124').innerHTML = 30+"<br/>"+"여름"; 
+	 		} else if (month == 7) {
+	 			document.getElementById('result124').innerHTML = 31+"<br/>"+"여름"; 
+	 		} else if (month == 8) {
+	 			document.getElementById('result124').innerHTML = 31+"<br/>"+"여름"; 
+	 		} else if (month == 9) {
+	 			document.getElementById('result124').innerHTML = 30+"<br/>"+"가을"; 
+	 		} else if (month == 10) {
+	 			document.getElementById('result124').innerHTML = 31+"<br/>"+"가을"; 
+	 		} else if (month == 11) {
+	 			document.getElementById('result124').innerHTML = 30+"<br/>"+"가을"; 
+	 		} else if (month == 12) {
+	 			document.getElementById('result124').innerHTML = 31+"<br/>"+"겨울"; 
+	 		} 
+
+
+		
+	 	}
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>530: 선택제어문 - 자가진단3</h3><br/>
+	<h5>나이를 입력받아 20살 이상이면 "adult"라고 출력하고 그렇지 않으면 몇 년후에 성인이 되는지를 "○ years later"라는 메시지를 출력하는 프로그램을 작성하시오.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>18</h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>2 years later</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	<!-- 입력 -->
+	나이 : <input type="text" id="age2"/>
+	
+	<button onclick="solve7();">출력</button> 
+	<p id="result530"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve7(){
+	 		var age2 = document.getElementById('age2').value;
+	 		var adultAge = 0
+
+            adultAge = 20 - parseInt(age2);
+	 		console.log("age2 :" + age2);
+	 		console.log("adultAge :" + adultAge);
+
+
+	 		if (age2 >= 20) {
+	 			document.getElementById('result530').innerHTML = "adult"; 
+	 		} else if (age2 < 20) {
+	 			document.getElementById('result530').innerHTML = adultAge+" years later"; 
+	 		} 
+
+		
+	 	}
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>532: 선택제어문 - 자가진단5</h3><br/>
+	<h5>두 개의 실수를 입력받아 모두 4.0 이상이면 "A", 모두 3.0 이상이면 "B", 아니면 "C" 라고 출력하는 프로그램을 작성하시오.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>4.3 3.5</h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>B</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	<!-- 입력 -->
+	실수 : <input type="text" id="num4"/>
+	실수 : <input type="text" id="num5"/>
+	
+	<button onclick="solve8();">출력</button> 
+	<p id="result532"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve8(){
+	 		var num4 = document.getElementById('num4').value;
+	 		var num5 = document.getElementById('num5').value;
+
+	 		parseFloat(num4);
+	 		parseFloat(num5);
+
+	 		console.log("num4 :" + num4);
+	 		console.log("num5 :" + num5);
+
+
+
+	 		if (num4 >= 4.0 && num5 >= 4.0) {
+	 			document.getElementById('result532').innerHTML = "A"; 
+	 		} else if (num4 >= 3.0 && num5 >= 3.0) {
+	 			document.getElementById('result532').innerHTML = "B"; 
+	 		} else {
+	 			document.getElementById('result532').innerHTML = "C"; 
+	 		}
+	 	}
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>536 : 반복제어문1 - 자가진단1</h3><br/>
+	<h5>1부터 15까지 차례로 출력하는 프로그램을 작성하시오. while문을 이용하세요.</h5>
+	<h6>출력 예 : </h6><p/>
+	<h6>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	
+	<button onclick="solve9();">출력</button> 
+	<p id="result536"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve9(){
+	 		var text = "";
+			var i = 1;
+			while (i < 16) {
+			    document.getElementById('result536').innerHTML = text += i +" ";
+			    i++;
+			} 	
+	 	}
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>572 : 함수1 - 자가진단2</h3><br/>
+	<h5>반지름의 길이를 전달받아 넓이를 출력하는 함수를 작성하고 반지름의 길이를 입력받아 함수를 호출하여 넓이를 출력하는 프로그램을 작성하시오. 
+	(원주율은 3.14로 하고 반올림하여 소수 둘째자리까지 출력한다. 원의 넓이 = 반지름 * 반지름 * 원주율이다.)</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>10</h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>314.00</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+
+	<!-- 입력 -->
+	반지름 : <input type="text" id="radius"/>
+	<button onclick="solve10();">출력</button> 
+	<p id="result572"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve10(){
+
+	 		var radius= document.getElementById('radius').value;
+			var area = 0
+
+      		area= parseFloat(radius)*parseFloat(radius)*3.14;
+			document.getElementById('result572').innerHTML = area.toFixed(2);
+
+		}	
+	 	
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>506 : 출력 - 자가진단6</h3><br/>
+	<h5>다음과 같이 출력되는 프로그램을 작성하라.</h5>
+	<h6>출력 예 : </h6><p/>
+	<h6>My height<br/>
+        170<br/>
+        My weight<br/>
+		68.600000</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+
+	<button onclick="solve11();">출력</button> 
+	<p id="result506"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve11(){
+
+			document.getElementById('result506').innerHTML = "My height"+"<br/>"+"170"+"<br/>"+"My weight"+"<br/>"+"68.600000";
+
+		}	
+	 	
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>102 : 출력 - 형성평가2</h3><br/>
+	<h5>다음 출력 예와 같이 출력되는 프로그램을 작성하시오.</h5>
+	<h6>출력 예 : </h6><p/>
+	<h6>My hometown<br/>
+        Flowering mountain<br/></h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+
+	<button onclick="solve12();">출력</button> 
+	<p id="result102"> </p>
+
+
+	<script>
+		// javaScript 작성 
+	 	function solve12(){
+
+			document.getElementById('result102').innerHTML = "My hometown"+"<br/>"+"Flowering mountain";
+		}	
+	 	
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>538 : 반복제어문1 - 자가진단3</h3><br/>
+	<h5>한 개의 정수를 입력받아 양수(positive integer)인지 음수(negative number)인지 출력하는 작업을 반복하다가 0이 입력되면 종료하는 프로그램을 작성하시오.</h5>
+	<h6>입출력 예 : </h6><p/>
+	<h6>number? 10<br/>
+		positive integer<br/>
+		number? -10<br/>
+		negative number<br/>
+		number? 0<br/></h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	number? : <input type="string" id="num6"/>
+	<button onclick="solve13();">출력</button> 
+	<p id="result538"> </p>
+	<script>
+		// javaScript 작성 
+	 	function solve13(){
+	 		var num6 = document.getElementById('num6').value;
+	 		parseInt(num6);
+	 		
+	 		if(num6>0) {
+	 			document.getElementById('result538').innerHTML = "positive integer";				
+	 		} else if(num6<0) {
+	 			document.getElementById('result538').innerHTML = "negative number";
+	 		} else if(num6==0) {
+	 			alert("권한이 없는 사용자 입니다. 종료합니다.");
+	 			parent.window.close();
+	 			top.close();
+	 		}
+		}	
+	 	
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>534 : 선택제어문 - 자가진단7</h3><br/>
+	<h5>영문 대문자를 입력받아 'A'이면 “Excellent”, 'B'이면 “Good”, 'C'이면 “Usually”, 'D'이면 “Effort”, 'F'이면 “Failure”, 그 외 문자이면 “error” 라고 출력하는 프로그램을 작성하시오.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>B<br/></h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>Good<br/></h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	학점 : <input type="string" id="grade"/>
+	<button onclick="solve534();">출력</button> 
+	<p id="result534"> </p>
+	<script>
+		// javaScript 작성 
+	 	function solve534(){
+	 		var grades = [];
+	 		grades = document.getElementById('grade').value;
+	 		var assessments = ["Excellent", "Good", "Usually", "Effort", "Failure"];
+	 		
+	 		if(grades=="A") {
+	 			document.getElementById('result534').innerHTML = assessments[0];				
+	 		} else if(grades=="B") {
+	 			document.getElementById('result534').innerHTML = assessments[1];
+	 		} else if(grades=="C") {
+	 			document.getElementById('result534').innerHTML = assessments[2];
+	 		} else if(grades=="D") {
+	 			document.getElementById('result534').innerHTML = assessments[3];
+	 		} else if(grades=="F") {
+	 			document.getElementById('result534').innerHTML = assessments[4];
+	 		}  else{
+	 			document.getElementById('result534').innerHTML = "error";
+	 		}
+		}	
+	 	
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>544 : 반복제어문2 - 자가진단4</h3><br/>
+	<h5>100 이하의 정수를 입력받아서 입력받은 정수부터 100까지의 합을 출력하는 프로그램을 작성하시오.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>95<br/></h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>585<br/></h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	number : <input type="string" id="num7"/>
+	<button onclick="solve544();">출력</button> 
+	<p id="result544"> </p>
+	<script>
+		// javaScript 작성 
+	 	function solve544(){
+	 		var num7 = document.getElementById('num7').value;
+	 		var sum = 0;
+	 		parseInt(num7);
+	 		
+	 		for(var i = 1; i<=num7; i++ ) {
+	 			sum=sum+i;
+	 		}
+	 		document.getElementById('result544').innerHTML = sum;
+		}	
+	 	
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>131 : 반복제어문2 - 형성평가2</h3><br/>
+	<h5>100 이하의 두 개의 정수를 입력받아 작은 수부터 큰 수까지 차례대로 출력하는 프로그램을 작성하시오.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>10 5<br/></h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>5 6 7 8 9 10<br/></h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	number1 : <input type="string" id="num8"/>
+	number2 : <input type="string" id="num9"/>
+	<button onclick="solve131();">출력</button> 
+	<p id="result131"> </p>
+	<script>
+		// javaScript 작성 
+	 	function solve131(){
+	 		var num8 = parseInt(document.getElementById('num8').value);
+	 		var num9 = parseInt(document.getElementById('num9').value);
+	 		var text = "";
+	 		
+	 		if(num8 > num9) {
+	 			for(var i = 0; i<=num8-num9; i++) {
+	 				document.getElementById('result131').innerHTML = (text += (num9+i));
+	 			}
+	 		} else if(num8 < num9) {
+	 			for(var i = 0; i<=num9-num8; i++ ) {
+	 				document.getElementById('result131').innerHTML = (text += (num8+i));
+	 			}
+	 		}
+	 		
+		}	
+	 	
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>545 : 반복제어문2 - 자가진단5</h3><br/>
+	<h5>10개의 정수를 입력받아 3의 배수의 개수와 5의 배수의 개수를 각각 출력하는 프로그램을 작성하시오.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>10 15 36 99 100 19 46 88 87 13<br/></h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>Multiples of 3 : 4<br/>
+		Multiples of 5 : 3</h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	number1 : <input type="string" id="num10"/>
+	number2 : <input type="string" id="num11"/>
+	number3 : <input type="string" id="num12"/>
+	number4 : <input type="string" id="num13"/>
+	number5 : <input type="string" id="num14"/>
+	number6 : <input type="string" id="num15"/>
+	number7 : <input type="string" id="num16"/>
+	number8 : <input type="string" id="num17"/>
+	number9 : <input type="string" id="num18"/>
+	number10 : <input type="string" id="num19"/>
+	<button onclick="solve545();">출력</button> 
+	<p id="result545"> </p>
+	<script>
+		// javaScript 작성 
+	 	function solve545(){
+	 		var num10 = parseInt(document.getElementById('num10').value);
+	 		var num11 = parseInt(document.getElementById('num11').value);
+	 		var num12 = parseInt(document.getElementById('num12').value);
+	 		var num13 = parseInt(document.getElementById('num13').value);
+	 		var num14 = parseInt(document.getElementById('num14').value);
+	 		var num15 = parseInt(document.getElementById('num15').value);
+	 		var num16 = parseInt(document.getElementById('num16').value);
+	 		var num17 = parseInt(document.getElementById('num17').value);
+	 		var num18 = parseInt(document.getElementById('num18').value);
+	 		var num19 = parseInt(document.getElementById('num19').value);
+	 		
+	 		var nums=["num10","num11","num12","num13","num14","num15","num16","num17","num18","num19"];
+
+	 		var text = "";
+
+	 		if(nums%3==0) {
+	 			for(var i = 0; i<nums.length ; i++) {
+	 				document.getElementById('result545').innerHTML = (text += nums[i]);
+	 			}
+	 		} else if(nums%5==0) {
+	 			for(var i = 0; i<nums.length ; i++ ) {
+	 				document.getElementById('result545').innerHTML = (text += nums[i]);
+	 			}
+	 		}
+	 		
+		}	
+	 	
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	
+
+
+</body>
+</html>
