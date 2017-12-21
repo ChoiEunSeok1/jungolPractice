@@ -589,6 +589,12 @@
 	 		var num7 = document.getElementById('num7').value;
 	 		var sum = 0;
 	 		parseInt(num7);
+
+	 		console.log("num11 :" + num11);
+	 		 if(num7>100){
+	 		 	alert("100 이하의 정수를 입력해주세요");
+	 		 	num7=0;
+	 		 }
 	 		
 	 		for(var i = 1; i<=num7; i++ ) {
 	 			sum=sum+i;
@@ -665,7 +671,6 @@
 
 	 		for(var i = 0; i < nums.length; i++) {
 	 			if(parseInt(nums[i])%3==0) {
-	 				//document.getElementById('result545').innerHTML = text += nums[i] + " ";
 	 				Multiples3.push(nums[i]);
 	 			}
 	 		} 
@@ -675,12 +680,10 @@
 
 	 		for(var j = 0; j < nums.length; j++) {
 	 			if(parseInt(nums[j])%5==0) {
-	 				//document.getElementById('result5452').innerHTML = text2 += nums[j] + " ";
 	 				Multiples5.push(nums[j]);
 	 			}
 	 		} 
-
-	 		console.log("Multiples3 :" + Multiples5.length);
+	 		console.log("Multiples5 :" + Multiples5.length);
 	 		document.getElementById('result5452').innerHTML = text + Multiples5.length;
 
 
