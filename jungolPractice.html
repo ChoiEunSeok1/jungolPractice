@@ -648,46 +648,105 @@
 	<h2>풀이----------------------------------------------------</h2>
 	<!--======================== 문제 풀기================================ -->
 
-	number1 : <input type="string" id="num10"/>
-	number2 : <input type="string" id="num11"/>
-	number3 : <input type="string" id="num12"/>
-	number4 : <input type="string" id="num13"/>
-	number5 : <input type="string" id="num14"/>
-	number6 : <input type="string" id="num15"/>
-	number7 : <input type="string" id="num16"/>
-	number8 : <input type="string" id="num17"/>
-	number9 : <input type="string" id="num18"/>
-	number10 : <input type="string" id="num19"/>
+	numbers : <input type="string" id="num10"/>
 	<button onclick="solve545();">출력</button> 
-	<p id="result545"> </p>
+	<p id="result545"></p>
+	<p id="result5452"></p>
 	<script>
 		// javaScript 작성 
 	 	function solve545(){
-	 		var num10 = parseInt(document.getElementById('num10').value);
+	 		var nums = [];
+	 		nums = document.getElementById('num10').value.split(" ");
+	 		var text = "Multiples of 3 : ";
+	 		var text2 = "Multiples of 5 : ";
+	 		console.log("nums :" + nums);
+	 		var Multiples3 = [];
+	 		var Multiples5 = [];
+
+	 		for(var i = 0; i < nums.length; i++) {
+	 			if(parseInt(nums[i])%3==0) {
+	 				//document.getElementById('result545').innerHTML = text += nums[i] + " ";
+	 				Multiples3.push(nums[i]);
+	 			}
+	 		} 
+	 		console.log("Multiples3 :" + Multiples3.length);
+	 		document.getElementById('result545').innerHTML = text + Multiples3.length;
+	 		
+
+	 		for(var j = 0; j < nums.length; j++) {
+	 			if(parseInt(nums[j])%5==0) {
+	 				//document.getElementById('result5452').innerHTML = text2 += nums[j] + " ";
+	 				Multiples5.push(nums[j]);
+	 			}
+	 		} 
+
+	 		console.log("Multiples3 :" + Multiples5.length);
+	 		document.getElementById('result5452').innerHTML = text + Multiples5.length;
+
+
+	 	}
+	 	
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>543 : 반복제어문2 - 자가진단3</h3><br/>
+	<h5>하나의 정수를 입력받아 1부터 입력받은 정수까지의 짝수를 차례대로 출력하는 프로그램을 작성하시오. 입력되는 정수는 50이하이다.</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>10<br/></h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>2 4 6 8 10<br/></h6>
+
+	<h2>풀이----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	number : <input type="string" id="num11"/>
+	<button onclick="solve543();">출력</button> 
+	<p id="result543"> </p>
+	<script>
+		// javaScript 작성 
+	 	function solve543(){
 	 		var num11 = parseInt(document.getElementById('num11').value);
-	 		var num12 = parseInt(document.getElementById('num12').value);
-	 		var num13 = parseInt(document.getElementById('num13').value);
-	 		var num14 = parseInt(document.getElementById('num14').value);
-	 		var num15 = parseInt(document.getElementById('num15').value);
-	 		var num16 = parseInt(document.getElementById('num16').value);
-	 		var num17 = parseInt(document.getElementById('num17').value);
-	 		var num18 = parseInt(document.getElementById('num18').value);
-	 		var num19 = parseInt(document.getElementById('num19').value);
-	 		
-	 		var nums=["num10","num11","num12","num13","num14","num15","num16","num17","num18","num19"];
-
 	 		var text = "";
-
-	 		if(nums%3==0) {
-	 			for(var i = 0; i<nums.length ; i++) {
-	 				document.getElementById('result545').innerHTML = (text += nums[i]);
-	 			}
-	 		} else if(nums%5==0) {
-	 			for(var i = 0; i<nums.length ; i++ ) {
-	 				document.getElementById('result545').innerHTML = (text += nums[i]);
-	 			}
-	 		}
 	 		
+	 		 console.log("num11 :" + num11);
+	 		 if(num11>50){
+	 		 	alert("50이상 입력하실 수 없습니다.");
+	 		 	num11=0;
+	 		 }
+			for(var i = 1; i<=num11; i++) {
+				if(i%2==0) {
+					document.getElementById('result543').innerHTML = (text += i + " ");
+				}		
+ 			}	
+		}	
+	 	
+	</script>
+	<hr/><!--문제구분 하는 hr태그-->
+
+	<h3>BonusMission1</h3><br/>
+	<h5>1. keepthefaith00@gmail.com 과 같은 이메일 주소 문자열을 입력 받은 후 
+		2. @를 기준으로 메일 id(keepthefaith00)와 도메인(gmail.com)을 구분하여 출력하시오</h5>
+	<h6>입력 예 : </h6><p/>
+	<h6>keepthefaith00@gmail.com<br/></h6>
+	<h6>출력 예 : </h6><p/>
+	<h6>메일id : keepthefaith00<br/>
+		도메인 : gmail.com</h6>
+
+	<h2>----------------------------------------------------</h2>
+	<!--======================== 문제 풀기================================ -->
+
+	email : <input type="string" id="email"/>
+	<button onclick="solveM1();">출력</button> 
+	<p id="BonusMission1"> </p>
+	<script>
+		// javaScript 작성 
+	 	function solveM1(){
+	 		var email = document.getElementById('email').value;
+	 		var div = email.split('@');
+	 		var text = "메일id : ";
+	 		var text2 = "도메인 : ";
+
+	 		document.getElementById('BonusMission1').innerHTML = text + div[0] + "<br/>" + text2 + div[1];
 		}	
 	 	
 	</script>
