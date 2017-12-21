@@ -668,10 +668,13 @@
 	 		console.log("nums :" + nums);
 	 		var Multiples3 = [];
 	 		var Multiples5 = [];
+	 		var count = 0;
+	 		var count2 = 0;
 
 	 		for(var i = 0; i < nums.length; i++) {
 	 			if(parseInt(nums[i])%3==0) {
 	 				Multiples3.push(nums[i]);
+	 				count += 1;
 	 			}
 	 		} 
 	 		console.log("Multiples3 :" + Multiples3.length);
@@ -681,10 +684,15 @@
 	 		for(var j = 0; j < nums.length; j++) {
 	 			if(parseInt(nums[j])%5==0) {
 	 				Multiples5.push(nums[j]);
+	 				count2 += 1;
 	 			}
 	 		} 
 	 		console.log("Multiples5 :" + Multiples5.length);
 	 		document.getElementById('result5452').innerHTML = text + Multiples5.length;
+
+	 		//count르 이용한 다른 방법
+	 		console.log("count :" + count);
+	 		console.log("count2 :" + count2);
 
 
 	 	}
